@@ -6,14 +6,76 @@
     <title>Inicio</title>
     <link rel="stylesheet" href="style.css">
 </head>
+<style>
+    p{
+        color: darkgrey;
+    }
+    body{
+       background-image: none;
+       margin: 0;
+       padding: 0;
+    }
+
+    .izquierda{
+       background: white;
+       height: 100vh;
+       width: 800px;
+    }
+
+    .derecha{
+     background: url('imagenes/Paralogins.png');
+     background-size: cover;
+     background-position: center;
+     height: 100vh;
+     width: 1100px;
+     margin-right: -5px;
+
+    }
+
+    #pantalla-dividida{
+        display: flex;
+    }
+</style>
 <body>
       <!-- Logotipo -->
   <div class="logo-container ">
     <img src="Imagenes/Origen.png" alt="Logo de la empresa" class="logo" >
 </div>
 
+   
+    <section id="pantalla-dividida"> 
+        <div class="izquierda"> 
+        
 
- <div class="container-Tapadera"></div>
+            <div class="container-izquierda-info">
+                <h1>Te  damos  la  Bienvenida! </h1>
+                <p>El Hogar del Doblaje: Vive tus Historias <br>
+                   Favoritas con Voces Únicas.
+                </p>
+        
+                <br>
+        
+                <button class="boton-Entrar-Inicio"> Entra Al Inicio </button></div>
+        
+            
+        </div>
+
+        <div class="derecha">
+            
+        </div>
+    </section>
+    <!--
+    <div class="container-Info">
+        <h1>Te damos la Bienvenida! </h1>
+        <p>El Hogar del Doblaje: Vive tus Historias <br>
+           Favoritas con Voces Únicas.
+        </p>
+
+        <br>
+
+        <button class="boton-Entrar-Inicio"> Entrar al Inicio </button>
+    </div>
+   -->
     
 </body>
 </html>
