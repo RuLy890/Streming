@@ -199,8 +199,19 @@ input {
   z-index: 1000; /* Asegura que esté por encima de otros elementos */
 }
 
+.container-Tapadera{
+    height: 1000px;
+    width: 1000px;
+    background: #fff;
+    
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    margin-right: 900px;
+    margin-left: -300px;
+}
 .logo {
   width: 150px; /* Ajusta el tamaño según necesites */
   height: auto;
+  margin-top: 25px;
+  margin-left: 50px;
   transition: transform 0.3s ease; /* Animación opcional */
 }
