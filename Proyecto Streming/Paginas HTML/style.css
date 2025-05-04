@@ -232,3 +232,16 @@ input {
     
     
 }
+
+.container-derecho-info{
+    background-color: #24110b;
+    color: white;
+    box-shadow: 0 14px 28px rgba(0,0,0,0s), 0 10px 10px rgba(0,0,0,0);
+    height: 535px;
+    width: 500px;
+    margin-top: 200px;
+    margin-left: 350px;
+    padding: 1px;
+    border-color: rgba(0, 0, 0, 0);
+    
+}

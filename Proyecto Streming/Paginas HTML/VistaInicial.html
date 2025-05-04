@@ -7,15 +7,31 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <style>
-    p{
-        color: darkgrey;
-    }
+   
     body{
        background-image: none;
        margin: 0;
        padding: 0;
+       display: flex;
+       flex-direction: column;
+    }
+     
+    p{
+        color: darkgrey;
     }
 
+    .titulo-personalizado{
+        font-size: 47px;
+        padding: 20px 5px 0 50px;
+    }
+
+    .p-personalizado{
+      font-size: 20px;
+      padding: 13px 20px 0 50px;
+      
+    }
+
+   
     .izquierda{
        background: white;
        height: 100vh;
@@ -35,6 +51,84 @@
     #pantalla-dividida{
         display: flex;
     }
+
+   
+
+    .izquierda{
+       background: white;
+       height: 100vh;
+       width: 800px;
+    }
+
+    .izquierda-img{
+        background: white;
+       height: 100vh;
+       width: 800px;
+       
+    }
+
+    .derecha-info{
+        background: url('imagenes/Paralogins.png');
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+        width: 1100px;
+        margin-right: -80px;
+    }
+
+    #muestras-contenido{
+        flex-direction: column;
+        display: inline-block;
+        color: gray;
+    }
+
+    .tarjetas{
+        height: 200px;
+        width: 140px;
+        background-color: white;
+        margin-top: 10px;
+        margin-left: 23px;
+        margin-right: -8px;
+        
+        
+    }
+
+    .separacion{
+        height: 15px;
+        width: 2000px;
+        background-color: #FC4500;
+        z-index: 1000;
+    }
+
+    .circulo-blanco {
+        width: 600px;
+        height: 600px;
+        background-color: #24110b;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        /* margin: auto; Centrar horizontalmente */
+       margin-right: 200px;
+       margin-left: -138px;
+       margin-top: -140px;
+    }
+    
+     .circulo-derecho-inicio{
+        width: 600px;
+        height: 600px;
+        background-color: #24110b; 
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        /* margin: auto; Centrar horizontalmente */
+       margin-right: -600px;
+       margin-left: 260px;
+       margin-top: 110px;
+     }    
 </style>
 <body>
       <!-- Logotipo -->
@@ -43,12 +137,13 @@
 </div>
 
    
+        <!-- Frame 1 -->
     <section id="pantalla-dividida"> 
         <div class="izquierda"> 
         
 
             <div class="container-izquierda-info">
-                <h1>Te  damos  la  Bienvenida! </h1>
+                <h1>!Te  damos  la  Bienvenida! </h1>
                 <p>El Hogar del Doblaje: Vive tus Historias <br>
                    Favoritas con Voces Únicas.
                 </p>
@@ -61,21 +156,77 @@
         </div>
 
         <div class="derecha">
+            <div class="circulo-derecho-inicio">
+                <img src="Imagenes/user.jpg" alt="Imagen dentro del círculo" style="width: 90%; height: auto; border-radius: 50%;">
+              </div>
+        </div>
+    </section>
+    
+    <br>
+    <br>
+
+    <!-- frame 2 -->
+    
+    <section id="pantalla-dividida">
+        <div class="container-izquierda-info"> 
+            <div class="izquierda-img"> 
+            
+                <div class="circulo-blanco">
+                    <img src="Imagenes/user.jpg" alt="Imagen dentro del círculo" style="width: 90%; height: auto; border-radius: 50%;">
+                  </div>
+               
+           </div></div>
+        
+        
+   
+           <div class="derecha-info">
+                 <div class="container-derecho-info">
+                    <div class="container-text">
+                        <h1 class="titulo-personalizado">!Sumérgete al <br>
+                            Mejor Contenido <br>
+                            Doblado!</h1>
+
+                        <p class="p-personalizado">Disfruta el mejor contenido como Anime, Comics y Videojuegos.</p>
+                    </div>
+                    <section id="muestras-contenido">
+                        <div class="tarjetas"> 
+                         
+                            <img src="Imagenes/Piratita.png" alt="imagen 1" style="width: 140px; height: 200px;">
+                         
+                        </div>
+                        
+                
+                    </section>
+                    <section id="muestras-contenido">
+                        <div class="tarjetas"> 
+                            <img src="Imagenes/Piratita2.jpg" alt="imagen 1" style="width: 140px; height: 200px;">
+                        </div>
+                        
+                    </section>
+                    <section id="muestras-contenido">
+                        <div class="tarjetas"> 
+                            <img src="Imagenes/Piratita3.jpg" alt="imagen 1" style="width: 140px; height: 200px;">
+                        </div>
+                        
+                    </section>
+                 </div>
+           </div>
+
+           
+    </section>
+        
+    
+    <section id="pantalla-dividida">
+        <div class="separacion">
             
         </div>
     </section>
-    <!--
-    <div class="container-Info">
-        <h1>Te damos la Bienvenida! </h1>
-        <p>El Hogar del Doblaje: Vive tus Historias <br>
-           Favoritas con Voces Únicas.
-        </p>
-
-        <br>
-
-        <button class="boton-Entrar-Inicio"> Entrar al Inicio </button>
-    </div>
-   -->
+    
+        
+  
+              
+        
+        
     
 </body>
 </html>
