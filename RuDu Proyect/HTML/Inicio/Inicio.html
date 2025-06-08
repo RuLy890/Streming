@@ -1,364 +1,98 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio</title>
-    <link rel="stylesheet" href="/RuDu Proyect/css/style-login.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inicio | RuDu</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: sans-serif; color: #333; }
+    .logo-container { padding: 20px; text-align: start; }
+    .logo { max-width: 200px; }
+    .frame { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; min-height: 100vh; padding: 20px; }
+    .frame-left, .frame-right { flex: 1 1 300px; padding: 20px; }
+    .frame-1 .btn { display: inline-block; background: #FC4500; color: #fff; padding: 12px 24px; text-decoration: none; border-radius: 4px; margin-top: 16px; }
+    .circle { width: 300px; height: 300px; background: #24110b; border-radius: 50%; overflow: hidden; display: flex; align-items: center; justify-content: center; margin: 0 auto; }
+    .circle img { width: 100%; height: auto; object-fit: cover; }
+    .separator { height: 5px; background: #FC4500; width: 100%; }
+    .cards, .cards-frame3 { display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; margin-top: 20px; }
+    .cards img { width: 140px; height: 200px; object-fit: cover; border-radius: 4px; }
+    .cards-frame3 .card { width: 165px; height: 270px; background: #ccc; border-radius: 4px; }
+    .questions { text-align: center; padding: 40px 20px; }
+    .questions h2 { margin-bottom: 8px; }
+    .questions p { color: gray; margin-bottom: 12px; }
+    .social-link { color: #FC4500; text-decoration: none; font-weight: bold; }
+    footer { background: #24110b; color: #fff; text-align: center; padding: 20px; }
+    .footer-nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 24px; margin-bottom: 12px; }
+    .footer-nav a { color: #fff; text-decoration: none; }
+    @media (max-width: 768px) {
+      .frame { flex-direction: column; }
+      .circle { width: 200px; height: 200px; }
+    }
+  </style>
 </head>
-<style>
-   
-    body{
-       background-image: none;
-       margin: 0;
-       padding: 0;
-       display: flex;
-       flex-direction: column;
-    }
-     
-    p{
-        color: darkgrey;
-    }
-
-    .titulo-personalizado{
-        font-size: 47px;
-        padding: 20px 5px 0 50px;
-    }
-
-    .p-personalizado{
-      font-size: 20px;
-      padding: 13px 20px 0 50px;
-      
-    }
-
-   
-    .izquierda{
-       background: white;
-       height: 100vh;
-       width: 800px;
-    }
-
-    .derecha{
-     background: url('imagenes/Paralogins.png');
-     background-size: cover;
-     background-position: center;
-     height: 100vh;
-     width: 1100px;
-     margin-right: -5px;
-     
-    }
-
-    #pantalla-dividida{
-        display: flex;
-    }
-
-   
-
-    .izquierda{
-       background: white;
-       height: 100vh;
-       width: 800px;
-    }
-
-    .izquierda-img{
-        background: white;
-       height: 100vh;
-       width: 800px;
-       
-    }
-
-    .derecha-info{
-        background: url('imagenes/Paralogins.png');
-        background-size: cover;
-        background-position: center;
-        height: 100vh;
-        width: 1100px;
-        margin-right: -80px;
-    }
-
-    #muestras-contenido{
-        flex-direction: column;
-        display: inline-block;
-        color: gray;
-    }
-
-    .tarjetas{
-        height: 200px;
-        width: 140px;
-        background-color: white;
-        margin-top: 10px;
-        margin-left: 23px;
-        margin-right: -8px;
-        
-        
-    }
-
-    .separacion{
-        height: 20px;
-        width: 2000px;
-        background-color: #FC4500;
-        z-index: 1000;
-    }
-
-    .circulo-blanco {
-        width: 600px;
-        height: 600px;
-        background-color: #24110b;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        /* margin: auto; Centrar horizontalmente */
-       margin-right: 200px;
-       margin-left: -138px;
-       margin-top: -140px;
-    }
-    
-     .circulo-derecho-inicio{
-        width: 600px;
-        height: 600px;
-        background-color: #24110b; 
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        /* margin: auto; Centrar horizontalmente */
-       margin-right: -600px;
-       margin-left: 260px;
-       margin-top: 110px;
-     }    
-
-     .titulo-frame3{
-        margin-top: 50px;
-        margin-left: -40px;
-     }
-
-     .containers-fondoT3{
-        height: 400px;
-        width: 1400px;
-        background-color: white;
-        margin-top: 90px;
-        margin-left: -560px;
-        
-     }
-
-     .tarjetas-frame3{
-        height: 270px;
-        width: 165px;
-        background-color: gray;
-        margin-top: 20px;
-        margin-left: 45px;
-        margin-right: -8px;
-        display: inline-block;
-     }
-
-     #muestra-contenido-frame3{
-        position: absolute;
-        color: gray;
-     }
-
-     #fondo-frame3{
-        background-image: url('imagenes/Paralogins.png');
-        height: 1000px;
-        width: 2000px;
-        margin-top: 100px;
-        z-index: -1; /* debajo de todo */
-     }
-
-     .containers-preguntas{
-        background-color: white;
-        width: 400px;
-        width: 500px;
-        margin-top: 380px;
-        margin-left: -218px;
-        position: absolute;
-     }
-
-     .p-pregunta1{
-        margin-left: 35px;
-        margin-bottom: 45px;
-     }
-     .p-pregunta2{
-        margin-left: 35px;
-        color: grey;
-        margin-bottom: 23px;
-        font-family: cursive
-     }
-
-     .p-pregunta3{
-        margin-left: 120px ;
-        color: #FC4500;
-        margin-bottom: 15px;
-     }
-     .flooter{
-        height: 300px;
-        width: 3000px;
-        background-color: #24110b;
-        margin-top: 900px;
-     }
-</style>
 <body>
-      <!-- Logotipo -->
-  <div class="logo-container ">
-    <img src="Imagenes/Origen.png" alt="Logo de la empresa" class="logo" >
-</div>
+  <header class="logo-container">
+    <img src="/RuDu Proyect/Imagenes/ben10.jpg" alt="Logo RuDu" class="logo">
+  </header>
 
-   
-        <!-- Frame 1 -->
-    <section id="pantalla-dividida"> 
-        <div class="izquierda"> 
-        
+  <section class="frame frame-1">
+    <div class="frame-left">
+      <h1>¡Te damos la Bienvenida!</h1>
+      <p>El Hogar del Doblaje: Vive tus Historias Favoritas con Voces Únicas.</p>
+      <a href="#" class="btn">Entra Al Inicio</a>
+    </div>
+    <div class="frame-right">
+      <div class="circle">
+        <img src="Imagenes/user.jpg" alt="Usuario">
+      </div>
+    </div>
+  </section>
 
-            <div class="container-izquierda-info">
-                <h1>!Te  damos  la  Bienvenida! </h1>
-                <p>El Hogar del Doblaje: Vive tus Historias <br>
-                   Favoritas con Voces Únicas.
-                </p>
-        
-                <br>
-        
-                <button class="boton-Entrar-Inicio"> Entra Al Inicio </button></div>
-        
-            
-        </div>
+  <section class="frame frame-2">
+    <div class="frame-left">
+      <div class="circle">
+        <img src="Imagenes/user.jpg" alt="Usuario">
+      </div>
+    </div>
+    <div class="frame-right">
+      <h2>¡Sumérgete al mejor contenido doblado!</h2>
+      <p>Disfruta el mejor contenido como Anime, Comics y Videojuegos.</p>
+      <div class="cards">
+        <img src="Imagenes/Piratita.png" alt="Contenido 1">
+        <img src="Imagenes/Piratita2.jpg" alt="Contenido 2">
+        <img src="Imagenes/Piratita3.jpg" alt="Contenido 3">
+      </div>
+    </div>
+  </section>
 
-        <div class="derecha">
-            <div class="circulo-derecho-inicio">
-                <img src="Imagenes/user.jpg" alt="Imagen dentro del círculo" style="width: 90%; height: auto; border-radius: 50%;">
-              </div>
-        </div>
-    </section>
-    
-    <br>
-    <br>
+  <div class="separator"></div>
 
-    <!-- frame 2 -->
-    
-    <section id="pantalla-dividida">
-        <div class="container-izquierda-info"> 
-            <div class="izquierda-img"> 
-            
-                <div class="circulo-blanco">
-                    <img src="Imagenes/user.jpg" alt="Imagen dentro del círculo" style="width: 90%; height: auto; border-radius: 50%;">
-                  </div>
-               
-           </div></div>
-        
-        
-   
-           <div class="derecha-info">
-                 <div class="container-derecho-info">
-                    <div class="container-text">
-                        <h1 class="titulo-personalizado">!Sumérgete al <br>
-                            Mejor Contenido <br>
-                            Doblado!</h1>
+  <section class="frame frame-3">
+    <h2>¡Lo que te espera!</h2>
+    <div class="cards-frame3">
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
+    </div>
+  </section>
 
-                        <p class="p-personalizado">Disfruta el mejor contenido como Anime, Comics y Videojuegos.</p>
-                    </div>
-                    <section id="muestras-contenido">
-                        <div class="tarjetas"> 
-                         
-                            <img src="Imagenes/Piratita.png" alt="imagen 1" style="width: 140px; height: 200px;">
-                         
-                        </div>
-                        
-                
-                    </section>
-                    <section id="muestras-contenido">
-                        <div class="tarjetas"> 
-                            <img src="Imagenes/Piratita2.jpg" alt="imagen 2" style="width: 140px; height: 200px;">
-                        </div>
-                        
-                    </section>
-                    <section id="muestras-contenido">
-                        <div class="tarjetas"> 
-                            <img src="Imagenes/Piratita3.jpg" alt="imagen 2" style="width: 140px; height: 200px;">
-                        </div>
-                        
-                    </section>
-                 </div>
-           </div>
+  <section class="questions">
+    <h2>¿Tienes algunas preguntas?</h2>
+    <p>Visita nuestras redes sociales.</p>
+    <a href="#" class="social-link">Redes Sociales</a>
+  </section>
 
-           
-    </section>
-        
-    
-    <section id="pantalla-dividida">
-        <div class="separacion">
-            
-        </div>
-    </section>
-    
-    
-
-    <!-- Frame 3 -->
-    
-    
-        <section id="pantalla-dividida">
-            <h1 class="titulo-frame3">!Lo que te espera!</h1>
-    
-            <section id="muestra-contenido-frame3">
-                <div class="containers-fondoT3">
-                    <div class="tarjetas-frame3">
-    
-                    </div>
-    
-                    <div class="tarjetas-frame3">
-                        
-                    </div>
-    
-                    <div class="tarjetas-frame3">
-    
-                    </div>
-    
-                    <div class="tarjetas-frame3">
-    
-                    </div>
-    
-                    <div class="tarjetas-frame3">
-    
-                    </div>
-    
-                    <div class="tarjetas-frame3">
-    
-                    </div>
-                </div>
-            </section>
-        </section>
-      
-
-
-        <section id="pantalla-dividida">
-
-            
-
-
-            <div class="containers-preguntas">
-                
-                    <h1 class="p-pregunta1"> ¿Tienes Algunas  Preguntas?  </h1>
-                    <h1 class="p-pregunta2"> Visita nuestras redes sociales.
-                       
-                    </h1>
-                    <h1 class="p-pregunta3"> Redes Sociales </h1>
-                   
- 
-        </div>
-    
-        
-    
-       </section>
-       
-        <br>
-        
-              
-        
-        <section id="pantalla-dividida">
-            <div class="flooter">
-
-            </div>
-        </section>
-    
+  <footer>
+    <nav class="footer-nav">
+      <a href="#">Acerca de nosotros</a>
+      <a href="#">Nuestras Políticas</a>
+      <a href="#">Condiciones de Uso</a>
+    </nav>
+    <p>© 2025 RuDu. Todos los derechos reservados.</p>
+  </footer>
 </body>
 </html>
