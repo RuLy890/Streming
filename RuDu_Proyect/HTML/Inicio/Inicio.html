@@ -3,37 +3,229 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="../../Imagenes/Logo.png" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?
+  family=Montserrat:ital,wght@1,700
+  &family=Open+Sans:wght@400
+  &display=swap" rel="stylesheet">
+
   <title>Inicio | RuDu</title>
   <style>
+    /* Reset y box-sizing */
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: sans-serif; color: #333; }
-    .logo-container { padding: 20px; text-align: start; }
+
+    /* Estilos globales */
+    body {
+      font-family: sans-serif;
+      color: #333;
+      padding: 0;
+    }
+
+    /* Logo */
+    .logo-container {
+      padding: 20px;
+      text-align: start;
+    }
     .logo { max-width: 200px; }
-    .frame { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; min-height: 100vh; padding: 20px; }
-    .frame-left, .frame-right { flex: 1 1 300px; padding: 20px; }
-    .frame-1 .btn { display: inline-block; background: #FC4500; color: #fff; padding: 12px 24px; text-decoration: none; border-radius: 4px; margin-top: 16px; }
-    .circle { width: 300px; height: 300px; background: #24110b; border-radius: 50%; overflow: hidden; display: flex; align-items: center; justify-content: center; margin: 0 auto; }
-    .circle img { width: 100%; height: auto; object-fit: cover; }
-    .separator { height: 5px; background: #FC4500; width: 100%; }
-    .cards, .cards-frame3 { display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; margin-top: 20px; }
-    .cards img { width: 140px; height: 200px; object-fit: cover; border-radius: 4px; }
-    .cards-frame3 .card { width: 165px; height: 270px; background: #ccc; border-radius: 4px; }
-    .questions { text-align: center; padding: 40px 20px; }
+
+    /* Secciones principales */
+    .frame {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 100vh;
+      width: 100%;
+      padding: 0 40px;
+      gap: 20px;
+    }
+    .frame-left,
+    .frame-right {
+      flex: 1 1 300px;
+      padding: 20px;
+    }
+
+    .frame-1 .btn {
+      display: inline-block;
+      background: #FC4500;
+      color: #fff;
+      padding: 12px 24px;
+      text-decoration: none;
+      border-radius: 4px;
+      margin-top: 16px;
+    }
+
+      /* Espacio extra en Frame 2 */
+    .frame-2 {
+      gap: 80px;          /* separa más círculo y caja */
+    }
+
+    /* Círculo y avatar */
+    .circle {
+      width: 500px;
+      height: 500px;
+      background: #24110b;
+      border-radius: 50%;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+    }
+    .circle img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Separador */
+    .separator {
+      height: 5px;
+      background: #FC4500;
+      width: 100%;
+    }
+
+    /* Tarjetas */
+    .cards,
+    .cards-frame3 {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: center;
+      margin-top: 20px;
+      padding: 0 40px;
+    }
+    .cards img {
+      width: 140px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+    .cards-frame3 .card {
+      width: 165px;
+      height: 270px;
+      background: #ccc;
+      border-radius: 4px;
+    }
+
+    /* Título específico centrado */
+    .separacion-titulo {
+      width: 100%;
+      text-align: center;
+      margin: 10px auto 10px;
+      font-size: 2rem;
+    }
+
+    /* Frame 3: Título y tarjetas centrados con menos separación */
+    .frame-3 {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 20px 20px; /* reducción top/bottom */
+    }
+    .cards-frame3 {
+      justify-content: center;
+      margin: 0 auto;
+    }
+
+    /* Preguntas y redes */
+    .questions {
+      text-align: center;
+      padding: 40px 20px;
+    }
     .questions h2 { margin-bottom: 8px; }
     .questions p { color: gray; margin-bottom: 12px; }
     .social-link { color: #FC4500; text-decoration: none; font-weight: bold; }
-    footer { background: #24110b; color: #fff; text-align: center; padding: 20px; }
-    .footer-nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 24px; margin-bottom: 12px; }
+
+    /* Footer */
+    footer {
+      background: #24110b;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+    }
+    .footer-nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 24px;
+      margin-bottom: 12px;
+    }
     .footer-nav a { color: #fff; text-decoration: none; }
+
+
+    /* Encabezado estilo “Sumérgete…” */
+.sumergete {
+  font-family: 'Montserrat', sans-serif;
+  font-style: italic;
+  font-weight: 700;
+  font-size: 2rem; /* o el tamaño que necesites */
+  line-height: 1.2;
+  color: #fff;
+  margin-bottom: 12px;
+}
+
+/* Texto descriptivo */
+.texto {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1rem;
+  line-height: 1.4;
+  color: #fff;
+}
+
+/* Si quieres cambiar el tamaño de las imágenes pequeñas: */
+.contenedor {
+  width: 100px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-right: 16px;
+}
+
+
+
+    /* Media queries */
+    @media (max-width: 2024px) {
+      .frame-left { margin-left: 80px; }
+      .frame-right { margin-right: 80px; }
+      .frame { padding: 0 20px; }
+      .cards, .cards-frame3 { padding: 0 20px; }
+      .pal-derecho{}
+    }
     @media (max-width: 768px) {
-      .frame { flex-direction: column; }
+      .frame-left { margin-left: 20px; }
+      .frame-right { margin-right: 20px; }
+      .frame { flex-direction: column; padding: 0 16px; }
       .circle { width: 200px; height: 200px; }
+      
+      .frame-2 {
+    gap: 40px;        /* menos separación en móviles */
+  }
+      .frame-3 {
+        align-items: center;
+        padding: 10px 10px; /* aún menos en móvil */
+      }
+      .separacion-titulo {
+        margin: 5px auto 8px;
+      }
+      .cards-frame3 {
+        padding: 0 10px;
+      }
+    }
+    @media (max-width: 480px) {
+      body { padding: 0 12px; }
+      .frame { padding: 0 12px; }
+      .cards, .cards-frame3 { padding: 0 12px; }
+      .circle { width: 150px; height: 150px; }
     }
   </style>
 </head>
 <body>
   <header class="logo-container">
-    <img src="/RuDu Proyect/Imagenes/ben10.jpg" alt="Logo RuDu" class="logo">
+    <img src="../../Imagenes/Logo.png" alt="Logo RuDu" class="logo">
   </header>
 
   <section class="frame frame-1">
@@ -44,32 +236,39 @@
     </div>
     <div class="frame-right">
       <div class="circle">
-        <img src="Imagenes/user.jpg" alt="Usuario">
-      </div>
-    </div>
-  </section>
-
-  <section class="frame frame-2">
-    <div class="frame-left">
-      <div class="circle">
-        <img src="Imagenes/user.jpg" alt="Usuario">
-      </div>
-    </div>
-    <div class="frame-right">
-      <h2>¡Sumérgete al mejor contenido doblado!</h2>
-      <p>Disfruta el mejor contenido como Anime, Comics y Videojuegos.</p>
-      <div class="cards">
-        <img src="Imagenes/Piratita.png" alt="Contenido 1">
-        <img src="Imagenes/Piratita2.jpg" alt="Contenido 2">
-        <img src="Imagenes/Piratita3.jpg" alt="Contenido 3">
+        <img src="../../Imagenes/Piratita_user.jpeg" alt="Usuario">
       </div>
     </div>
   </section>
 
   <div class="separator"></div>
 
-  <section class="frame frame-3">
-    <h2>¡Lo que te espera!</h2>
+  <section class="frame frame-2 ">
+    <div class="frame-left">
+      <div class="circle">
+        <img src="../../Imagenes/PiratitaCar.jpeg" alt="Usuario">
+      </div>
+    </div>
+    <div class="frame-right pal-derecho" style="background-color: #24110b; color: #fff; ">
+      <h2 class="sumergete " >¡Sumérgete al <br> mejor contenido <br> doblado!</h2>
+      
+      <br>
+      <p class="texto">Disfruta el mejor contenido como Anime, Comics <br> y Videojuegos.</p>
+
+      <br>
+      
+      <div>
+        <img class="contenedor" style="background-color: #333;" src="../../Imagenes/Piratita1.jpeg" alt="Contenido">
+        <img class="contenedor" style="background-color: #333;"   src="../../Imagenes/Piratita2.jpeg" alt="Contenido">
+        <img class="contenedor" style="background-color: #333;"  src="../../Imagenes/PiratitaM.jpeg" alt="Contenido">
+      </div>
+    </div>
+  </section>
+
+  <div class="separator"></div>
+
+  <section >
+    <h2 class="separacion-titulo">¡Lo que te espera!</h2>
     <div class="cards-frame3">
       <div class="card"></div>
       <div class="card"></div>
