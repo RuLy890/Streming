@@ -41,7 +41,7 @@
     }
     .frame-left,
     .frame-right {
-      flex: 1 1 300px;
+      
       padding: 20px;
     }
 
@@ -189,9 +189,9 @@
 
     /* Media queries */
     @media (max-width: 2024px) {
-      .frame-left { margin-left: 80px; }
+      .frame-left { margin-left: 80px;  }
       .frame-right { margin-right: 80px; }
-      .frame { padding: 0 20px; }
+      .frame { padding: 0 20px;  }
       .cards, .cards-frame3 { padding: 0 20px; }
       .pal-derecho{}
     }
@@ -203,6 +203,7 @@
       
       .frame-2 {
     gap: 40px;        /* menos separación en móviles */
+    margin-bottom: 20px;
   }
       .frame-3 {
         align-items: center;
@@ -220,10 +221,17 @@
       .frame { padding: 0 12px; }
       .cards, .cards-frame3 { padding: 0 12px; }
       .circle { width: 150px; height: 150px; }
+      .frame-right{
+        
+      }
     }
   </style>
 </head>
 <body>
+
+<!-- Canvas de círculos cafés -->
+  <canvas id="bgCanvas" style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;pointer-events:none;"></canvas>
+
   <header class="logo-container">
     <img src="../../Imagenes/Origen2-Photoroom.png" alt="Logo RuDu" class="logo">
   </header>
@@ -249,7 +257,7 @@
         <img src="../../Imagenes/PiratitaCar.jpeg" alt="Usuario">
       </div>
     </div>
-    <div class="frame-right pal-derecho" style="background-color: #24110b; color: #fff; ">
+    <div class="frame-right pal-derecho" style="background-color: #24110b; color: #fff;  ">
       <h2 class="sumergete " >¡Sumérgete al <br> mejor contenido <br> doblado!</h2>
       
       <br>
@@ -293,5 +301,51 @@
     </nav>
     <p>© 2025 RuDu. Todos los derechos reservados.</p>
   </footer>
+
+
+ 
+ <script>
+    window.addEventListener('load', () => {
+      const canvas = document.getElementById('bgCanvas');
+      const ctx = canvas.getContext('2d');
+      function resize() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      }
+      resize();
+      window.addEventListener('resize', resize);
+
+      // Selectores a proteger del fondo
+      const protectedEls = document.querySelectorAll(
+        '.logo-container, .circle, .highlight-box, .frame-3, .questions, footer'
+      );
+      const boxes = Array.from(protectedEls).map(el => el.getBoundingClientRect());
+
+      function hits(x, y, r, box) {
+        const nx = Math.max(box.left, Math.min(x, box.right));
+        const ny = Math.max(box.top, Math.min(y, box.bottom));
+        const dx = x - nx, dy = y - ny;
+        return dx*dx + dy*dy < r*r;
+      }
+
+      const N = 40, minR = 20, maxR = 80;
+      ctx.fillStyle = '#4e342e';
+      ctx.globalAlpha = 0.4;
+
+      let drawn = 0, tries = 0;
+      while (drawn < N && tries < N*15) {
+        tries++;
+        const r = minR + Math.random()*(maxR-minR);
+        const x = r + Math.random()*(canvas.width-2*r);
+        const y = r + Math.random()*(canvas.height-2*r);
+        if (boxes.some(b => hits(x,y,r,b))) continue;
+        ctx.beginPath();
+        ctx.arc(x, y, r, 0, Math.PI*2);
+        ctx.fill();
+        drawn++;
+      }
+    });
+  </script>
+
 </body>
 </html>

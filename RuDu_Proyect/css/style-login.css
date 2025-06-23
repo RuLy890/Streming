@@ -8,7 +8,7 @@
 }
 
 body {
-  background: url('/RuDu Proyect/Imagenes/Paralogins.png') center/cover fixed;
+  background: url('../Imagenes/Paralogins.png') center/cover fixed;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -197,10 +197,12 @@ input {
   top: 20px;
   left: 20px;
   z-index: 1000; /* Asegura que esté por encima de otros elementos */
+  opacity: 1;
 }
 
 .logo {
   width: 150px; /* Ajusta el tamaño según necesites */
   height: auto;
   transition: transform 0.3s ease; /* Animación opcional */
+  
 }
