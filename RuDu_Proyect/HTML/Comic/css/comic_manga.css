@@ -1,0 +1,372 @@
+/* Estilo general del carrusel */
+body{
+    background-color: white;
+}
+.carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    width: 100%;
+    height: 500px;
+    margin: 0 auto;
+    position: relative;
+    background-color: white;
+}
+
+/* Contenedor interno con todas las imágenes */
+.carousel-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Cada imagen individual */
+.carousel-item {
+    flex: 0 0 auto;
+    width: 397px; /* 3 imágenes por fila */
+    height: 100%;
+    margin: 0 10px;
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Imagen ajustada con escala */
+.carousel-item img {
+    width: 90%; 
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Flechas de navegación */
+.carousel-prev,
+.carousel-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #b03046;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.carousel-prev {
+    left: 10px;
+}
+
+.carousel-next {
+    right: 10px;
+}
+
+/* Estilo para los indicadores */
+.carousel-indicators {
+    position: relative;
+    margin-top: 30px;
+    bottom: 10px; /* Ubicación en la parte inferior del carrusel */
+    left: 50%;
+    right: 50%;
+    transform: translateX(-50%); /* Centra los indicadores */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* Espacio entre los puntos */
+}
+
+.carousel-indicators button {
+    border: none;
+    background-color: #6e6666;
+    border-radius: 70%; /* Hace que los botones sean circulares */
+    width: 10px;
+    height: 10px;
+    opacity: 0.5;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.carousel-indicators button.active {
+    opacity: 1; /* Hace más visibles el botón activo */
+    background-color: #b03046; /* Color azul para el botón activo */
+}
+
+.carousel-indicators button:hover {
+    opacity: 0.7; /* Efecto al pasar el mouse */
+}
+
+
+
+.carousel-item {
+    transition: transform 0.3s ease, scale 0.3s ease;
+    transform: scale(0.8);
+    opacity: 0.8;
+  }
+  
+  .carousel-item.center {
+    transform: scale(1.1);
+    opacity: 1;
+    z-index: 2;
+  }
+  
+  .carousel-item.side {
+    transform: scale(0.85);
+    opacity: 0.7;
+  }
+  
+
+  .barra-manga-comic {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px 0;
+    background-color: #ffffff;
+    border-bottom: 2px solid #ffffff;
+  }
+  
+  .barra-manga-comic a {
+    font-size: 20px;
+    position: relative; /* Necesario para ::after */
+    color: #333;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+   
+   
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+/* Efecto de subrayado al pasar el mouse */
+.barra-manga-comic a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 3px;
+    background-color: #b03046;
+    transition: width 0.3s ease;
+}
+  
+.barra-manga-comic a:hover {
+    color: #b03046;
+}
+  
+.barra-manga-comic a:hover::after {
+    width: 100%;
+}
+
+.seccion-text{
+    text-align: center;
+}
+
+.seccion-text a{
+    font-size: 18px;
+    position: relative; /* Necesario para ::after */
+    color: #333;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-left: auto;
+    transition: background-color 0.3s, color 0.3s;
+    font-weight:bold;
+    
+    
+}
+
+/* Efecto de subrayado al pasar el mouse */
+.seccion-text a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 3px;
+    background-color: #b03046;
+    transition: width 0.3s ease;
+}
+  
+.seccion-text a:hover {
+    color: #b03046;
+}
+  
+.seccion-text a:hover::after {
+    width: 100%;
+}
+
+h1{
+    padding: 0 26px; /*margen lateral */
+    font-weight: bold;
+    color: #b03046;
+}
+
+
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* 6 columnas iguales */
+    gap: 5px; /* Espacio entre cartas */
+    margin-bottom: 35px; /* Separación entre filas */
+    padding: 0 10px; /* Opcional: margen lateral */
+    
+    
+}
+
+.card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    text-align: center;
+    /*box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);*/
+    transition: transform 0.3s ease;
+    overflow: hidden;              /*para evitar que el contenido se salga */
+    cursor: pointer;
+}
+h2{
+    font-size: 20px ;
+}
+.card-section h2{
+    padding: 0 26px; /* Opcional: margen lateral */
+    
+
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card img {
+    width: 100%;
+    height: 100%;                  
+    object-fit: contain;           
+    border-radius: 8px;
+   
+    transition: transform 0.3s ease-in-out;
+   
+    max-height: 240px;             /* Opcional: limita la altura si es necesario */
+}
+.card h4{
+    margin-top: auto;
+    font-style:initial;
+    font-size: 16px;
+    font-family:system-ui;
+    font-weight:450;
+}
+
+.seccion{
+    height: 85px;
+}
+
+
+
+
+/* APARTADO DE GENEROS*/
+
+.seccion-genero {
+    display: flex;
+    gap: 15px;
+    padding: 20px;
+    align-items: flex-start;
+    font-family: sans-serif;
+    height: 300px;
+   
+  }
+  
+  .genero-comedia {
+    display: block;
+    background-color: #f4a300;
+    color: white;
+    padding: 15px;
+    justify-content: space-between; /* Distribuye arriba y abajo */
+    border-radius: 10px;
+    width: 160px;
+    min-height: 250px;
+    text-align: center;
+    text-decoration: none;
+    font-family: sans-serif;
+    transition: transform 0.2s ease;
+  }
+  
+  .genero-comedia:hover {
+    transform: scale(1.03);
+    background-color: #e09000;
+  }
+
+  .genero-comedia h2 {
+    margin: 0;
+  }
+  
+  .genero-comedia p {
+    margin: 50;
+  }
+  
+  
+  .lista-comics {
+    display: flex;
+    gap: 15px;
+    height: 280px;
+    width: 100%;
+    flex-wrap: nowrap;
+   
+  }
+  
+  .comic-card {
+    position: relative; /* Necesario para posicionar elementos internos */
+    border-radius: 10px;
+    width: 180px;
+    height: 100%;
+    overflow: hidden; /* Oculta el exceso de la imagen */
+    color: white; /* Para que el texto resalte sobre la imagen */
+    text-align: center;
+    transition: transform 0.3s;
+  }
+  
+  .comic-card:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Imagen como fondo absoluto */
+.comic-card img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0; /* Debajo del contenido */
+    filter: brightness(0.8); /* Oscurece un poco para que el texto resalte */
+  }
+  /* Contenido encima de la imagen */
+.comic-card h4,
+.comic-card .likes,
+.comic-card .estado {
+  position: relative;
+  z-index: 1;
+}
+  
+/* Puedes reorganizar los elementos con flex para mejor presentación */
+.comic-card h4 {
+    font-size: 14px;
+    margin: 5px 0;
+    margin-top: 210px; /* Empujar hacia abajo, ajusta según lo necesites */
+  }
+  
+  .likes {
+    font-size: 12px;
+    color: lightgreen;
+  }
+  
+  .estado {
+    background-color:#b03046;
+    color: rgb(255, 255, 255);
+    border-radius: 4px;
+    padding: 2px 5px;
+    margin-left: 4px;
+    font-weight: bold;
+    font-size: 10px;
+    display: inline-block;
+  }
